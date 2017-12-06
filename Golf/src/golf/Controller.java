@@ -1,6 +1,6 @@
 package golf;
 
-import io2017.pierogimroku.task.api.Task;
+import com.spanishinquisition.implementation.IAuth;
 
 import java.util.Scanner;
 
@@ -9,11 +9,12 @@ import java.util.Scanner;
  */
 public class Controller {
 
-    //token here
+    IAuth authorization;
 
     public static void main(String[] args) {
         Controller controller = new Controller();
         controller.LogIn();
+        controller.authorization = new IAuth();
 
         TempTasks tempTasks = new TempTasks();
         tempTasks.TakeTasks(0);
@@ -24,11 +25,17 @@ public class Controller {
     private void LogIn(){
         String login;
         String password;
-        System.out.println("Welcome! \nLogin: ");
+        System.out.print("Welcome! \nLogin: ");
         Scanner input = new Scanner(System.in);
         login=input.next();
-        System.out.println("Password: ");
+        System.out.print("Password: ");
         password = input.next();
+        try {
+            String what = authorization.login(login,password);
+            System.out.println(what);
+        }catch (NullPointerException ex){
+            System.out.println("Cannot login ");
+        }
 
     }
 

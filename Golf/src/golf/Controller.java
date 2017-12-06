@@ -19,6 +19,7 @@ public class Controller {
         tempTasks.TakeTasks(0);
         tempTasks.ShowTasks();
 
+        tempTasks.EditTask(0);
     }
     private void LogIn(){
         String login;

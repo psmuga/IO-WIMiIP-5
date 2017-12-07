@@ -1,6 +1,9 @@
 package golf;
 
 import com.spanishinquisition.implementation.IAuth;
+import io2017.pierogimroku.task.ORMLiteTaskManager;
+import io2017.pierogimroku.task.api.ITaskManager;
+import io2017.pierogimroku.task.api.ITaskView;
 
 import java.util.Scanner;
 
@@ -9,20 +12,23 @@ import java.util.Scanner;
  */
 public class Controller {
 
-    IAuth authorization;
+    private IAuth authorization;
 
     public static void main(String[] args) {
         Controller controller = new Controller();
-        controller.LogIn();
+        controller.logIn();
         controller.authorization = new IAuth();
 
-        TempTasks tempTasks = new TempTasks();
-        tempTasks.TakeTasks(0);
-        tempTasks.ShowTasks();
+        ITaskManager userTaskManager = new ORMLiteTaskManager();
+        ITaskView taskSearcher = new ORMLiteTaskManager();
 
-        tempTasks.EditTask(0);
+        TempTasks tempTasks = new TempTasks(userTaskManager, taskSearcher);
+        tempTasks.takeTasks(0);
+        tempTasks.showTasks();
+        tempTasks.editTask(0);
     }
-    private void LogIn(){
+
+    private void logIn(){
         String login;
         String password;
         System.out.print("Welcome! \nLogin: ");
@@ -36,7 +42,5 @@ public class Controller {
         }catch (NullPointerException ex){
             System.out.println("Cannot login ");
         }
-
     }
-
 }

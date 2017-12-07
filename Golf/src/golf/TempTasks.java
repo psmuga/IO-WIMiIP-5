@@ -1,41 +1,48 @@
 package golf;
 
-import io2017.pierogimroku.task.ORMLiteTaskManager;
 import io2017.pierogimroku.task.api.ITaskManager;
 import io2017.pierogimroku.task.api.ITaskView;
 import io2017.pierogimroku.task.api.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Created by Piotr Smuga on 06.12.2017.
  */
-public class TempTasks {
+public class TempTasks{
     private List<Task> userTasks;
-    ITaskManager manager = new ORMLiteTaskManager();
-    ITaskView temp = new ORMLiteTaskManager();
-    public TempTasks() {
-        userTasks = new ArrayList<>();
+    private ITaskManager userTaskManager;
+    private ITaskView taskSearcher;
 
+
+    public List<Task> getUserTasks() {
+        return userTasks;
     }
-    public void TakeTasks(int id){
 
+    public TempTasks(ITaskManager userTaskManager, ITaskView taskSearcher){
+        this.userTasks = new ArrayList<>();
+        this.userTaskManager = userTaskManager;
+        this.taskSearcher = taskSearcher;
+    }
+
+    public void takeTasks(int id) throws NoSuchElementException{
         try {
-            userTasks = temp.searchTaskByAssignedEmployee(id);
+            userTasks = taskSearcher.searchTaskByAssignedEmployee(id);
         } catch (Exception ex){
-            //logging error
             System.out.println("Error: " + ex.getMessage());
+            throw new NoSuchElementException();
         }
-
     }
-    public void ShowTasks(){
+
+    public void showTasks(){
         for (Task task:userTasks) {
             System.out.println(task.getName() +" | " + task.getDescription());
         }
     }
-    public void EditTask(int id){
+    public void editTask(int id){
         userTasks.get(id).setName("another name of task");
-        manager.editTask(userTasks.get(id));
+        userTaskManager.editTask(userTasks.get(id));
     }
 }

@@ -46,5 +46,9 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="org.mockito:mockito-all:1.10.19" level="project" />
+    <orderEntry type="library" name="org.mockito:mockito-core:2.2.2" level="project" />
+    <orderEntry type="library" name="taskmanager-api-1.1" level="project" />
+    <orderEntry type="library" name="taskmanager-mock-1.1" level="project" />
+    <orderEntry type="library" name="IO-1.0-SNAPSHOT" level="project" />
   </component>
 </module>

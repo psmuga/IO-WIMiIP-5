@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="taskmanager-api-1.0">
+  <library name="taskmanager-api-1.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/taskmanager-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/taskmanager-api-1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -6,7 +6,6 @@ import com.spanishinquisition.functions.IAuth;
 import io2017.pierogimroku.task.api.ITaskManager;
 import io2017.pierogimroku.task.api.ITaskView;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -17,21 +16,27 @@ public class Controller {
     private IAuth authorization;
     static Scanner input = new Scanner(System.in);
 
+    ITaskManager userTaskManager;
+    ITaskView taskSearcher;
+    TempTasks tempTasks;
+
     public static void main(String[] args) {
 
         Controller controller = new Controller();
         controller.authorization = new IAuth() {};
-        int selection = 1;
+
+
+
+        int selection = 0;
         do {
             if (controller.logIn()){
-                ITaskManager userTaskManager = new ORMLiteTaskManager();
-                ITaskView taskSearcher = new ORMLiteTaskManager();
+                controller.userTaskManager = new ORMLiteTaskManager();
+                controller.taskSearcher = new ORMLiteTaskManager();
+                controller.tempTasks = new TempTasks(controller.userTaskManager, controller.taskSearcher);
 
+                controller.performOperation();
 
-                TempTasks tempTasks = new TempTasks(userTaskManager, taskSearcher);
-                tempTasks.takeUserTasks(0);
-                tempTasks.showTasks();
-//                tempTasks.editTask(0);
+                selection = 0;
             }
             else {
                 System.out.println("Ups :( You cannot get access to this secret information!");
@@ -42,6 +47,12 @@ public class Controller {
 
 
 
+    }
+    private void performOperation(){
+
+        tempTasks.takeUserTasks(0);
+        tempTasks.showTasks();
+//                tempTasks.editTask(0);
     }
 
     private boolean logIn(){

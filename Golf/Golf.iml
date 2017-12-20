@@ -48,7 +48,10 @@
     <orderEntry type="library" name="org.mockito:mockito-all:1.10.19" level="project" />
     <orderEntry type="library" name="org.mockito:mockito-core:2.2.2" level="project" />
     <orderEntry type="library" name="taskmanager-api-1.1" level="project" />
-    <orderEntry type="library" name="taskmanager-mock-1.1" level="project" />
-    <orderEntry type="library" name="IO-1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="IO-1.0-SNAPSHOT-jar-with-dependencies" level="project" />
+    <orderEntry type="library" name="taskmanager-1.0" level="project" />
+    <orderEntry type="library" name="ormlite-core-4.23" level="project" />
+    <orderEntry type="library" name="ormlite-jdbc-4.23" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc-3.21.0" level="project" />
   </component>
 </module>

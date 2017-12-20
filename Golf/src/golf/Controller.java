@@ -15,16 +15,16 @@ public class Controller {
 
     private IAuth authorization;
     static Scanner input = new Scanner(System.in);
-
     ITaskManager userTaskManager;
     ITaskView taskSearcher;
     TempTasks tempTasks;
+    User currentUser;
 
     public static void main(String[] args) {
 
         Controller controller = new Controller();
         controller.authorization = new IAuth() {};
-
+        controller.currentUser = new User();
 
 
         int selection = 0;
@@ -65,7 +65,8 @@ public class Controller {
         password = input.next();
         try {
             String what = authorization.login(login,password);
-            System.out.println(what);
+            currentUser = Wrapper.Wrapp(what);
+            currentUser.print();
         }
         catch (NullPointerException ex){
             System.out.println("Cannot login");

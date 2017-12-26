@@ -1,4 +1,4 @@
-package golf;
+package golf.model;
 
 /**
  * Created by Piotr Smuga on 06.12.2017.

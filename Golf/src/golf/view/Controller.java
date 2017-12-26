@@ -1,8 +1,11 @@
-package golf;
+package golf.view;
 
 
 import com.spanishinquisition.functions.IAuth;
- import io2017.pierogimroku.task.ORMLiteTaskManager;
+import golf.TempTasks;
+import golf.model.User;
+import golf.model.UserWrapper;
+import io2017.pierogimroku.task.ORMLiteTaskManager;
 import io2017.pierogimroku.task.api.ITaskManager;
 import io2017.pierogimroku.task.api.ITaskView;
 
@@ -65,7 +68,7 @@ public class Controller {
         password = input.next();
         try {
             String what = authorization.login(login,password);
-            currentUser = Wrapper.Wrapp(what);
+            currentUser = UserWrapper.Wrapp(what);
             currentUser.print();
         }
         catch (NullPointerException ex){

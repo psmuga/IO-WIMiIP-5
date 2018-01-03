@@ -23,7 +23,7 @@ public class Controller {
     TempTasks tempTasks;
     User currentUser;
 
-    public static void main(String[] args) {
+    public  void main(String[] args) {
 
         Controller controller = new Controller();
         controller.authorization = new IAuth() {};

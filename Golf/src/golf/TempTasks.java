@@ -2,8 +2,8 @@ package golf;
 
 import io2017.pierogimroku.task.api.ITaskManager;
 import io2017.pierogimroku.task.api.ITaskView;
+import io2017.pierogimroku.task.api.TaskLook;
 import io2017.pierogimroku.task.api.TaskNotFoundException;
-import io2017.pierogimroku.task.api.TaskWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +13,12 @@ import java.util.NoSuchElementException;
  * Created by Piotr Smuga on 06.12.2017.
  */
 public class TempTasks{
-    private List<TaskWrapper> userTasks;
+    private List<TaskLook> userTasks;
     private ITaskManager userTaskManager;
     private ITaskView taskSearcher;
 
 
-    public List<TaskWrapper> getUserTasks() {
+    public List<TaskLook> getUserTasks() {
         return userTasks;
     }
 
@@ -38,7 +38,7 @@ public class TempTasks{
     }
 
     public void showTasks(){
-        for (TaskWrapper task: userTasks) {
+        for (TaskLook task: userTasks) {
             System.out.println(task.getId() +" | " +task.getName() +" | " + task.getDescription());
         }
     }

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 //import io2017.pierogimroku.task.api.Task;
-import io2017.pierogimroku.task.api.TaskWrapper;
+import io2017.pierogimroku.task.api.TaskLook;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -37,7 +37,7 @@ public class TempTaskTest {
     public void shouldGetOneTaskWithNameSomeTaskAndDescriptionSomething()
     {
         int idToSearch = 0;
-        List<TaskWrapper> tasksToReturnFromMock = Arrays.asList(new TaskWrapper("Some Task", "Something", 1,1, new Date(),1,1));
+        List<TaskLook> tasksToReturnFromMock = Arrays.asList(new TaskLook("Some Task", "Something", 1,1, new Date(),1,1));
         when(taskSearcher.searchTaskByAssignedEmployee(idToSearch)).thenReturn(tasksToReturnFromMock);
 
         tempTasksToTest.takeUserTasks(idToSearch);

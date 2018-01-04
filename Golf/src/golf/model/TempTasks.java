@@ -1,4 +1,4 @@
-package golf;
+package golf.model;
 
 import io2017.pierogimroku.task.api.ITaskManager;
 import io2017.pierogimroku.task.api.ITaskView;

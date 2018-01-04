@@ -1,8 +1,8 @@
-package golf.view;
+package golf;
 
 
 import com.spanishinquisition.functions.IAuth;
-import golf.TempTasks;
+import golf.model.TempTasks;
 import golf.model.User;
 import golf.model.UserWrapper;
 import io2017.pierogimroku.task.ORMLiteTaskManager;
@@ -14,6 +14,7 @@ import java.util.Scanner;
 /**
  * Created by Piotr Smuga on 06.12.2017.
  */
+@Deprecated
 public class Controller {
 
     private IAuth authorization;

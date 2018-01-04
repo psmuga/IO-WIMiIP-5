@@ -1,11 +1,11 @@
-package golf.view;
+package golf.controller;
 
 import com.spanishinquisition.functions.IAuth;
 import golf.model.User;
 import golf.model.UserWrapper;
+import golf.model.ViewSetupManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -27,18 +27,26 @@ public class AuthorisationController  implements Initializable{
     @FXML
     public PasswordField password;
     private IAuth authorization;
-    User currentUser;
-    boolean canContinue;
+    private User currentUser;
+    private boolean canContinue;
+    ViewSetupManager viewManager;
+
     public void setData(IAuth authorization, User user, boolean canContinue) {
         this.authorization = authorization;
         this.currentUser = user;
         this.canContinue = canContinue;
     }
 
+    public void setViewManager(ViewSetupManager manager){
+        this.viewManager = manager;
+    }
 
     public void handleSend(){
         System.out.println(login.getText() + " " + password.getText());
         logIn();
+        if(canContinue){
+            viewManager.showTaskOverview();
+        }
     }
     private void logIn(){
         try {

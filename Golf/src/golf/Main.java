@@ -5,8 +5,8 @@ package golf;
  */
 
 import com.spanishinquisition.functions.IAuth;
+import golf.controller.AuthorisationController;
 import golf.model.User;
-import golf.view.AuthorisationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,9 +26,9 @@ import javafx.stage.Stage;
 public class Main  extends Application{
     private IAuth authorization;
     private User currentUser;
-    Stage primaryStage;
+    private Stage primaryStage;
     private Parent root;
-    boolean canContinue = false;
+    private boolean canContinue = false;
     public static void main(String[] args) {
         launch(args);
     }

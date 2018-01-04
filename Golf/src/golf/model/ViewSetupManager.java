@@ -30,15 +30,11 @@ public class ViewSetupManager {
 
     public void showLogin() throws IOException {
         try{
-            IAuth authorization = new IAuth() {};
-            User currentUser = new User();
-            boolean canContinue = false;
-
+            AuthorizationManager authorizationManager = AuthorizationManager.getInstance();
             setPrimaryStageSceneFromPathToFxmlFile("/golf/view/Login.fxml",primaryStage);
-
             AuthorisationController controller = fxmlLoader.getController();
             controller.setViewManager(this);
-            controller.setData(authorization, currentUser, canContinue);
+            controller.setData(authorizationManager);
             primaryStage.show();
         }catch(Exception e){
             e.printStackTrace();

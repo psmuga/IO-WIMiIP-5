@@ -1,8 +1,12 @@
 package golf.model;
 
+import io2017.pierogimroku.task.ORMLiteTaskManager;
 import io2017.pierogimroku.task.api.TaskLook;
+import io2017.pierogimroku.task.api.TaskNotFoundException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.util.List;
 
 /**
  * Created by Michał Słowikowski.
@@ -10,43 +14,46 @@ import javafx.collections.ObservableList;
 public class TaskModelProvider {
     private static TaskModelProvider instance;
     private ObservableList<TaskModel> taskData;
+    private ORMLiteTaskManager taskManager = new ORMLiteTaskManager();
 
-    private TaskModelProvider(){
+    private TaskModelProvider()
+    {
         taskData = FXCollections.observableArrayList();
     }
 
-    public static TaskModelProvider getInstance(){
-        if(instance == null){
+    public static TaskModelProvider getInstance()
+    {
+        if (instance == null)
+        {
             instance = new TaskModelProvider();
         }
 
         return instance;
     }
 
-    /**TODO
-     * zaimplementować tak aby odzyskiwała listę tasków korzystając z metod dostarczonych przez Pierogi Mroku
-     */
-    public void refreshTaskData(){
-        taskData = FXCollections.observableArrayList();
-        taskData.add(new TaskModel("Task1",2, TaskLook.Status.NEW,"Opis jest bardzo wazny"));
-        taskData.add(new TaskModel("Different name",1, TaskLook.Status.ASSIGNED,"Opis jest wazny"));
+    public void refreshTaskData()
+    {
+        List<TaskLook> looks = taskManager.getAll();
+        taskData = TaskModelTransformer.transformLooks(looks);
     }
 
-    /**TODO
-     * zaimplementować tak aby dodać nowy task korzystając z metod dostarczonych przez Pierogi Mroku
-     */
-    public void addNewTask(TaskModel newTask){
-        taskData.add(newTask);
+    public void addNewTask(TaskModel newTask)
+    {
+        taskManager.addTask(TaskModelTransformer.transformModel(newTask));
     }
 
-    /**TODO
-     * zaimplementować tak aby edytować nowy task korzystając z metod dostarczonych przez Pierogi Mroku
-     */
-    public void editTask(TaskModel taskToEdit){
-        System.out.println("Udało zedytować się taska");
+    public void editTask(TaskModel taskToEdit) throws TaskNotFoundException
+    {
+        taskManager.editTask(TaskModelTransformer.transformModel(taskToEdit));
     }
 
-    public ObservableList<TaskModel> getTaskData(){
+    public void deleteTask(TaskModel taskToDelete) throws TaskNotFoundException
+    {
+        taskManager.removeTask(TaskModelTransformer.transformModel(taskToDelete));
+    }
+
+    public ObservableList<TaskModel> getTaskData()
+    {
         return taskData;
     }
 }

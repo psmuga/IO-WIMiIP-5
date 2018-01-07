@@ -3,6 +3,7 @@ package golf.controller;
 import golf.model.TaskModel;
 import golf.model.TaskModelProvider;
 import golf.model.ViewSetupManager;
+import io2017.pierogimroku.task.api.TaskNotFoundException;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -70,27 +71,33 @@ public class TaskOverviewController {
         boolean confirmed = viewManager.showTaskEdit(newTask);
         if(confirmed){
             taskProvider.addNewTask(newTask);
+            refreshTableItems();
         }
     }
 
     @FXML
-    private void handleEditTask(){
+    private void handleEditTask() throws TaskNotFoundException
+    {
          TaskModel selectedTask = taskTable.getSelectionModel().getSelectedItem();
         if(selectedTask != null){
             boolean confirmed = viewManager.showTaskEdit(selectedTask);
             if(confirmed){
                 setSelectedTask(selectedTask);
                 taskProvider.editTask(selectedTask);
+                refreshTableItems();
             }
         }
     }
 
     @FXML
-    private void handleDeleteTask(){
-            int selectedTaskId = taskTable.getSelectionModel().getSelectedIndex();
-            if(selectedTaskId >= 0){
-                taskTable.getItems().remove(selectedTaskId);
-            } else {
+    private void handleDeleteTask() throws TaskNotFoundException
+    {
+            TaskModel selectedTask = taskTable.getSelectionModel().getSelectedItem();
+            if(selectedTask != null){
+                taskProvider.deleteTask(selectedTask);
+                refreshTableItems();
+            } else
+            {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.initOwner(viewManager.getPrimaryStage());
                 alert.setTitle("No Selection");
@@ -120,5 +127,11 @@ public class TaskOverviewController {
         assigneeLabel.setText("");
         statusLabel.setText("");
         descriptionLabel.setText("");
+    }
+
+    private void refreshTableItems()
+    {
+        taskProvider.refreshTaskData();
+        taskTable.setItems(taskProvider.getTaskData());
     }
 }

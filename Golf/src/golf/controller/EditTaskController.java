@@ -2,9 +2,12 @@ package golf.controller;
 
 import golf.model.TaskModel;
 import io2017.pierogimroku.task.api.TaskLook;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -26,7 +29,13 @@ public class EditTaskController {
     @FXML
     private ComboBox<TaskLook.Status> status;
     @FXML
-    private TextField description;
+    private TextArea description;
+    @FXML
+    private TextField estimatedTime;
+    @FXML
+    public TextField priority;
+    @FXML
+    public ComboBox<String> owner;
 
     private Stage dialogStage;
     private TaskModel task;
@@ -37,6 +46,22 @@ public class EditTaskController {
     @FXML
     private void initialize() {
         status.getItems().addAll(TaskLook.Status.values());
+        estimatedTime.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if(!newValue.matches("\\d*")) {
+                    estimatedTime.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        priority.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if(!newValue.matches("\\d*")) {
+                    priority.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 
     public void setDialogStage(Stage dialogStage) {
@@ -46,6 +71,7 @@ public class EditTaskController {
         this.allUsers = allUsers;
         for (int key: allUsers.keySet()) {
             assignee.getItems().add(allUsers.get(key));
+            owner.getItems().add(allUsers.get(key));
         }
     }
 
@@ -55,8 +81,11 @@ public class EditTaskController {
             task.setName(name.getText());
             task.setStatus(status.getValue());
             task.setDescription(description.getText());
+            task.setEstimatedTime(Integer.parseInt(estimatedTime.getText()));
+            task.setPriority(Integer.parseInt(priority.getText()));
 
             task.setAssignee(getUserIdFromName(assignee.getValue()));
+            task.setOwnerId(getUserIdFromName(owner.getValue()));
             okClicked = true;
             dialogStage.close();
         }
@@ -75,11 +104,18 @@ public class EditTaskController {
         String taskToEditDescription = taskToEdit.getDescription();
         int userID = taskToEdit.getAssignee();
         String taskToEditAssignee = allUsers.get(userID);
+        String taskToEditEstimatedTime = Integer.toString(taskToEdit.getEstimatedTime());
+        String taskToEditPriority = Integer.toString(taskToEdit.getPriority());
+        int ownerId = taskToEdit.getOwnerId();
+        String taskToEditOwner = allUsers.get(ownerId);
 
         name.setText(taskToEditName);
         assignee.setValue(taskToEditAssignee);
         status.setValue(taskToEditStatus);
         description.setText(taskToEditDescription);
+        estimatedTime.setText(taskToEditEstimatedTime);
+        priority.setText(taskToEditPriority);
+        owner.setValue(taskToEditOwner);
     }
 
     public boolean isOkClicked() {
@@ -104,8 +140,17 @@ public class EditTaskController {
         if(status.getValue() == null){
             errorMessage += "Set status!\n";
         }
-        if(description.getText()== null || description.getText().length() == 0) {
+        if(description.getText() == null || description.getText().length() == 0) {
             errorMessage += "Wrong description!\n";
+        }
+        if(estimatedTime.getText() == null) {
+            errorMessage += "Set estimated time!\n";
+        }
+        if(priority.getText() == null) {
+            errorMessage += "Set priority\n";
+        }
+        if(owner.getValue() == null) {
+            errorMessage += "Set ownership\n";
         }
 
         if(errorMessage.length() != 0){

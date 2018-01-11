@@ -4,12 +4,10 @@ import golf.model.TaskModel;
 import golf.model.TaskModelProvider;
 import golf.model.ViewSetupManager;
 import io2017.pierogimroku.task.api.TaskNotFoundException;
-import javafx.collections.ObservableList;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
 import java.util.Map;
 
@@ -25,7 +23,11 @@ import java.util.Map;
 public class TaskOverviewController {
 
     @FXML
-    private TableColumn<TaskModel,String> sideColumn;
+    private TableColumn<TaskModel,String> taskName;
+    @FXML
+    private TableColumn<TaskModel,String> taskAssignee;
+    @FXML
+    private TableColumn<TaskModel,String> taskStatus;
     @FXML
     private TableView<TaskModel> taskTable;
 
@@ -36,7 +38,13 @@ public class TaskOverviewController {
     @FXML
     private Label statusLabel;
     @FXML
-    private Label descriptionLabel;
+    private TextArea descriptionLabel;
+    @FXML
+    private Label estimatedTimeLabel;
+    @FXML
+    private Label priorityLabel;
+    @FXML
+    private Label ownerLabel;
 
     private ViewSetupManager viewManager;
     private TaskModelProvider taskProvider;
@@ -58,8 +66,18 @@ public class TaskOverviewController {
 
     @FXML
     private void initialize() {
-            sideColumn.setCellValueFactory(cell->cell.getValue().getName());
+            taskName.setCellValueFactory(cell->cell.getValue().getName());
             clearSelectedTask();
+            taskAssignee.setCellValueFactory(cell->
+                    new SimpleStringProperty(
+                            allUsers.get(cell.getValue().getAssignee())
+                    )
+            );
+            taskStatus.setCellValueFactory(cell->
+                    new SimpleStringProperty(
+                            cell.getValue().getStatus().name()
+                    )
+            );
             taskTable.getSelectionModel().selectedItemProperty().addListener((
                     (observable, oldValue, newValue) -> setSelectedTask(newValue)
             ));
@@ -114,11 +132,19 @@ public class TaskOverviewController {
             String assignee = allUsers.get(selectedTask.getAssignee());
             String status = selectedTask.getStatus().name();
             String description = selectedTask.getDescription();
+            String estimatedTime = Integer.toString(selectedTask.getEstimatedTime());
+            String priority = Integer.toString(selectedTask.getPriority());
+            String owner = allUsers.get(selectedTask.getOwnerId());
 
             nameLabel.setText(name);
             assigneeLabel.setText(assignee);
             statusLabel.setText(status);
             descriptionLabel.setText(description);
+            estimatedTimeLabel.setText(estimatedTime);
+            priorityLabel.setText(priority);
+            ownerLabel.setText(owner);
+        } else {
+            clearSelectedTask();
         }
     }
 
@@ -127,6 +153,9 @@ public class TaskOverviewController {
         assigneeLabel.setText("");
         statusLabel.setText("");
         descriptionLabel.setText("");
+        estimatedTimeLabel.setText("");
+        priorityLabel.setText("");
+        ownerLabel.setText("");
     }
 
     private void refreshTableItems()

@@ -13,11 +13,14 @@ public class TaskModelTransformer {
     public static TaskModel transformLook(TaskLook taskLook)
     {
         TaskModel taskModel = new TaskModel();
+        taskModel.setId(taskLook.getId());
         taskModel.setAssignee(taskLook.getAssignedId());
-        taskModel.setDescription(taskLook.getDescription());
         taskModel.setName(taskLook.getName());
         taskModel.setStatus(taskLook.getStatus());
-        taskModel.setId(taskLook.getId());
+        taskModel.setDescription(taskLook.getDescription());
+        taskModel.setEstimatedTime(taskLook.getTimeEstimate());
+        taskModel.setPriority(taskLook.getPriority());
+        taskModel.setOwnerId(taskLook.getOwnerId());
 
         return taskModel;
     }
@@ -26,14 +29,14 @@ public class TaskModelTransformer {
     {
         TaskLook taskLook = new TaskLook();
 
-        taskLook.setAssignedId(taskModel.getAssignee());
-        taskLook.setDescription(taskModel.getDescription());
-        taskLook.setName(taskModel.getName().getValue());
-        taskLook.setStatus(taskModel.getStatus());
-        taskLook.setTimeEstimate(taskModel.getEstimatedTime());
-        taskLook.setOwnerId(taskModel.getOwnerId());
-        taskLook.setPriority(taskModel.getPriority());
         taskLook.setId(taskModel.getId());
+        taskLook.setName(taskModel.getName().getValue());
+        taskLook.setAssignedId(taskModel.getAssignee());
+        taskLook.setStatus(taskModel.getStatus());
+        taskLook.setDescription(taskModel.getDescription());
+        taskLook.setTimeEstimate(taskModel.getEstimatedTime());
+        taskLook.setPriority(taskModel.getPriority());
+        taskLook.setOwnerId(taskModel.getOwnerId());
 
         return taskLook;
     }

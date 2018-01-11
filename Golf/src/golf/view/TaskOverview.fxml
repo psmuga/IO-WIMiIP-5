@@ -99,7 +99,7 @@
                                         <Font size="24.0" />
                                     </font>
                                 </Label>
-                                <TextArea fx:id="descriptionLabel" editable="false" wrapText="true" prefHeight="74.0" prefWidth="153.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                <TextArea fx:id="descriptionLabel" editable="false" prefHeight="74.0" prefWidth="153.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                     <font>
                                         <Font size="11.0" />
                                     </font>
@@ -128,6 +128,7 @@
                                 <Button mnemonicParsing="false" onAction="#handleDeleteTask" text="Delete" />
                             </buttons>
                         </ButtonBar>
+                  <Button layoutX="491.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
                     </children>
                 </AnchorPane>
             </items>

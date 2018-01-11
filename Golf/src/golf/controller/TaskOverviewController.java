@@ -6,9 +6,12 @@ import golf.model.ViewSetupManager;
 import io2017.pierogimroku.task.api.TaskNotFoundException;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Map;
 
 
@@ -162,5 +165,16 @@ public class TaskOverviewController {
     {
         taskProvider.refreshTaskData();
         taskTable.setItems(taskProvider.getTaskData());
+    }
+
+    public void handleLogout(ActionEvent actionEvent) {
+        try {
+            Stage stage;
+            stage = (Stage) taskTable.getScene().getWindow();
+            stage.close();
+            viewManager.showLogin();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

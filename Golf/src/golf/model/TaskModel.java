@@ -62,11 +62,6 @@ public class TaskModel {
         this.assignee.set(assignee);
     }
 
-    public IntegerProperty assigneeProperty()
-    {
-        return assignee;
-    }
-
     public TaskLook.Status getStatus()
     {
         return status.get();
@@ -75,11 +70,6 @@ public class TaskModel {
     public void setStatus(TaskLook.Status status)
     {
         this.status.set(status);
-    }
-
-    public ObjectProperty<TaskLook.Status> statusProperty()
-    {
-        return status;
     }
 
     public String getDescription()
@@ -92,20 +82,12 @@ public class TaskModel {
         this.description.set(description);
     }
 
-    public StringProperty descriptionProperty()
-    {
-        return description;
-    }
 
     public int getEstimatedTime()
     {
         return estimatedTime.get();
     }
 
-    public IntegerProperty estimatedTimeProperty()
-    {
-        return estimatedTime;
-    }
 
     public void setEstimatedTime(int estimatedTime)
     {
@@ -117,10 +99,6 @@ public class TaskModel {
         return priority.get();
     }
 
-    public IntegerProperty priorityProperty()
-    {
-        return priority;
-    }
 
     public void setPriority(int priority)
     {
@@ -132,10 +110,6 @@ public class TaskModel {
         return ownerId.get();
     }
 
-    public IntegerProperty ownerIdProperty()
-    {
-        return ownerId;
-    }
 
     public void setOwnerId(int ownerId)
     {
@@ -147,10 +121,6 @@ public class TaskModel {
         return id.get();
     }
 
-    public IntegerProperty idProperty()
-    {
-        return id;
-    }
 
     public void setId(int id)
     {

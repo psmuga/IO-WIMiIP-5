@@ -27,8 +27,8 @@ public class AuthorisationController  implements Initializable{
     public TextField login;
     @FXML
     public PasswordField password;
-    AuthorizationManager authorizationManager;
-    ViewSetupManager viewManager;
+    private AuthorizationManager authorizationManager;
+    private ViewSetupManager viewManager;
 
     public void setData(AuthorizationManager authorizationManager) {
         this.authorizationManager = authorizationManager;

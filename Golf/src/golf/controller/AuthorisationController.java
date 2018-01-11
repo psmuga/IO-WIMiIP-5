@@ -42,6 +42,7 @@ public class AuthorisationController  implements Initializable{
         System.out.println(login.getText() + " " + password.getText());
         logIn();
         if(authorizationManager.isCanContinue()){
+            closeScene();
             viewManager.showTaskOverview();
         }
     }
@@ -52,7 +53,6 @@ public class AuthorisationController  implements Initializable{
             authorizationManager.getCurrentUser().print();
             //sprawdzenie poprawnosci i wyjscie z tego okna;
             authorizationManager.setCanContinue(true);
-            closeScene();
         }
         catch (NullPointerException ex){
             System.out.println("Cannot login");

@@ -11,7 +11,7 @@ import java.util.Map;
 public class UsersProvider {
     private Map<Integer,String> users;
     private static UsersProvider instance;
-    private static UserManagement userManager;
+    private static UserManagement userManager = UserManagement.getInstance();
 
     public static UsersProvider getInstance(){
         if(instance == null){
@@ -25,12 +25,7 @@ public class UsersProvider {
      * zaimplementować tak aby odzyskiwała listę użytko
      */
     public void refreshUsersData(){
-        users = new HashMap<>();
-        users.put(1,"User1");
-        users.put(2,"User2");
-        users.put(4,"User4");
-
-//        users = userManager.getUsersMap();
+        users = userManager.getUsersMap();
     }
 
     public Map<Integer,String> getUsers(){

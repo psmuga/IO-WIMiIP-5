@@ -1,5 +1,6 @@
 package golf.model;
 
+import com.spanishinquisition.functions.Auth;
 import com.spanishinquisition.functions.IAuth;
 
 /**
@@ -28,7 +29,7 @@ public class AuthorizationManager {
     }
 
     private AuthorizationManager() {
-        this.authorization = new IAuth() {};
+        this.authorization = Auth.getInstance();
         this.currentUser = new User();
         this.canContinue = false;
 

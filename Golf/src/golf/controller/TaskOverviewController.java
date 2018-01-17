@@ -69,8 +69,10 @@ public class TaskOverviewController {
 
     @FXML
     private void initialize() {
-            taskName.setCellValueFactory(cell->cell.getValue().getName());
             clearSelectedTask();
+            taskName.setCellValueFactory(
+                    cell->cell.getValue().getName()
+            );
             taskAssignee.setCellValueFactory(cell->
                     new SimpleStringProperty(
                             allUsers.get(cell.getValue().getAssignee())

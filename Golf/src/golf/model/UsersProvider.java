@@ -1,8 +1,6 @@
 package golf.model;
 
 import usermanagement.UserManagement;
-
-import java.util.HashMap;
 import java.util.Map;
 
 /**

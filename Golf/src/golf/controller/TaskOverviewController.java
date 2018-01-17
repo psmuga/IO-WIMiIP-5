@@ -135,7 +135,7 @@ public class TaskOverviewController {
 
     private void setSelectedTask(TaskModel selectedTask){
         if(selectedTask != null) {
-            String name = selectedTask.getName().get();
+            String name = selectedTask.getName();
             String assignee = allUsers.get(selectedTask.getAssignee());
             String status = selectedTask.getStatus().name();
             String description = selectedTask.getDescription();

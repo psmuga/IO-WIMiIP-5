@@ -1,5 +1,5 @@
 /**
  * Created by Michał Słowikowski.
  */
-public class MainDemoTest {
+public class MainTest {
 }

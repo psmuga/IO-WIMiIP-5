@@ -1,6 +1,5 @@
 package golf.model;
 
-import com.spanishinquisition.functions.IAuth;
 import golf.controller.AuthorisationController;
 import golf.controller.EditTaskController;
 import golf.controller.TaskOverviewController;
@@ -30,11 +29,11 @@ public class ViewSetupManager {
 
     public void showLogin() throws IOException {
         try{
-            AuthorizationManager authorizationManager = AuthorizationManager.getInstance();
+            AuthorisationManager authorisationManager = AuthorisationManager.getInstance();
             setPrimaryStageSceneFromPathToFxmlFile("/golf/view/Login.fxml",primaryStage);
             AuthorisationController controller = fxmlLoader.getController();
             controller.setViewManager(this);
-            controller.setData(authorizationManager);
+            controller.setData(authorisationManager);
             primaryStage.show();
         }catch(Exception e){
             e.printStackTrace();

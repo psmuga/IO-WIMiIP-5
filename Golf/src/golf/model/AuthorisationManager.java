@@ -6,15 +6,15 @@ import com.spanishinquisition.functions.IAuth;
 /**
  * Created by Piotr Smuga on 04.01.2018.
  */
-public class AuthorizationManager {
+public class AuthorisationManager {
     private IAuth authorization;
     private User currentUser;
     private boolean canContinue = false;
-    private static AuthorizationManager instance;
+    private static AuthorisationManager instance;
 
-    public static AuthorizationManager getInstance(){
+    public static AuthorisationManager getInstance(){
         if(instance == null){
-            instance = new AuthorizationManager();
+            instance = new AuthorisationManager();
         }
 
         return instance;
@@ -28,7 +28,7 @@ public class AuthorizationManager {
         this.canContinue = canContinue;
     }
 
-    private AuthorizationManager() {
+    private AuthorisationManager() {
         this.authorization = Auth.getInstance();
         this.currentUser = new User();
         this.canContinue = false;

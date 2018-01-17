@@ -1,8 +1,6 @@
 package golf.controller;
 
-import com.spanishinquisition.functions.IAuth;
-import golf.model.AuthorizationManager;
-import golf.model.User;
+import golf.model.AuthorisationManager;
 import golf.model.UserWrapper;
 import golf.model.ViewSetupManager;
 import javafx.fxml.FXML;
@@ -27,11 +25,11 @@ public class AuthorisationController  implements Initializable{
     public TextField login;
     @FXML
     public PasswordField password;
-    private AuthorizationManager authorizationManager;
+    private AuthorisationManager authorisationManager;
     private ViewSetupManager viewManager;
 
-    public void setData(AuthorizationManager authorizationManager) {
-        this.authorizationManager = authorizationManager;
+    public void setData(AuthorisationManager authorisationManager) {
+        this.authorisationManager = authorisationManager;
     }
 
     public void setViewManager(ViewSetupManager manager){
@@ -41,27 +39,27 @@ public class AuthorisationController  implements Initializable{
     public void handleSend(){
         System.out.println(login.getText() + " " + password.getText());
         logIn();
-        if(authorizationManager.isCanContinue()){
+        if(authorisationManager.isCanContinue()){
             closeScene();
             viewManager.showTaskOverview();
         }
     }
     private void logIn(){
         try {
-            String what = authorizationManager.getAuthorization().login(login.getText(),password.getText());
-            authorizationManager.setCurrentUser(UserWrapper.Wrapp(what));
-            authorizationManager.getCurrentUser().print();
+            String what = authorisationManager.getAuthorization().login(login.getText(),password.getText());
+            authorisationManager.setCurrentUser(UserWrapper.Wrapp(what));
+            authorisationManager.getCurrentUser().print();
             //sprawdzenie poprawnosci i wyjscie z tego okna;
-            authorizationManager.setCanContinue(true);
+            authorisationManager.setCanContinue(true);
         }
         catch (NullPointerException ex){
             System.out.println("Cannot login");
             showAlert(Alert.AlertType.ERROR,login.getScene().getWindow(),"Wrong credentials","Please try again or exit");
-            authorizationManager.setCanContinue(false);
+            authorisationManager.setCanContinue(false);
         } catch (NoClassDefFoundError ex){
             System.out.println("internal error");
             showAlert(Alert.AlertType.ERROR,login.getScene().getWindow(),"Wrong credentials","Please try again or exit");
-            authorizationManager.setCanContinue(false);
+            authorisationManager.setCanContinue(false);
         }
     }
 

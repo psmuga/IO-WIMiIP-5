@@ -17,7 +17,7 @@ public class TaskModel {
 
     private String name;
     private int assignee;
-    private ObjectProperty<TaskLook.Status> status;
+    private TaskLook.Status status;
     private String description;
     private int estimatedTime;
     private int priority;
@@ -35,7 +35,7 @@ public class TaskModel {
     {
         this.name = name;
         this.assignee = idAssignee;
-        this.status = new SimpleObjectProperty<>(status);
+        this.status = status;
         this.description = description;
         this.estimatedTime =estimatedTime;
         this.priority = priority;
@@ -63,12 +63,12 @@ public class TaskModel {
 
     public TaskLook.Status getStatus()
     {
-        return status.get();
+        return status;
     }
 
     public void setStatus(TaskLook.Status status)
     {
-        this.status.set(status);
+        this.status = status;
     }
 
 

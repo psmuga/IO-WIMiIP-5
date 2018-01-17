@@ -69,21 +69,25 @@ public class TaskOverviewController {
 
     @FXML
     private void initialize() {
-            taskName.setCellValueFactory(cell->cell.getValue().getName());
-            clearSelectedTask();
-            taskAssignee.setCellValueFactory(cell->
-                    new SimpleStringProperty(
-                            allUsers.get(cell.getValue().getAssignee())
-                    )
-            );
-            taskStatus.setCellValueFactory(cell->
-                    new SimpleStringProperty(
-                            cell.getValue().getStatus().name()
-                    )
-            );
-            taskTable.getSelectionModel().selectedItemProperty().addListener((
-                    (observable, oldValue, newValue) -> setSelectedTask(newValue)
-            ));
+        taskName.setCellValueFactory(cell->
+                new SimpleStringProperty(
+                        cell.getValue().getName()
+                )
+        );
+        taskAssignee.setCellValueFactory(cell->
+                new SimpleStringProperty(
+                        allUsers.get(cell.getValue().getAssignee())
+                )
+        );
+        taskStatus.setCellValueFactory(cell->
+                new SimpleStringProperty(
+                        cell.getValue().getStatus().name()
+                )
+        );
+        taskTable.getSelectionModel().selectedItemProperty().addListener((
+                (observable, oldValue, newValue) -> setSelectedTask(newValue)
+        ));
+        clearSelectedTask();
     }
 
     @FXML
@@ -131,7 +135,7 @@ public class TaskOverviewController {
 
     private void setSelectedTask(TaskModel selectedTask){
         if(selectedTask != null) {
-            String name = selectedTask.getName().get();
+            String name = selectedTask.getName();
             String assignee = allUsers.get(selectedTask.getAssignee());
             String status = selectedTask.getStatus().name();
             String description = selectedTask.getDescription();

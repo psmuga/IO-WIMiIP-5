@@ -99,7 +99,7 @@ public class EditTaskController {
     public void setTaskToEdit(TaskModel taskToEdit){
         this.task = taskToEdit;
 
-        String taskToEditName = taskToEdit.getName().get();
+        String taskToEditName = taskToEdit.getName();
         TaskLook.Status taskToEditStatus = taskToEdit.getStatus();
         String taskToEditDescription = taskToEdit.getDescription();
         int userID = taskToEdit.getAssignee();

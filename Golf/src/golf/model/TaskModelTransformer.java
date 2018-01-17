@@ -30,7 +30,7 @@ public class TaskModelTransformer {
         TaskLook taskLook = new TaskLook();
 
         taskLook.setId(taskModel.getId());
-        taskLook.setName(taskModel.getName().getValue());
+        taskLook.setName(taskModel.getName());
         taskLook.setAssignedId(taskModel.getAssignee());
         taskLook.setStatus(taskModel.getStatus());
         taskLook.setDescription(taskModel.getDescription());

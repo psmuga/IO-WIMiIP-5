@@ -69,23 +69,25 @@ public class TaskOverviewController {
 
     @FXML
     private void initialize() {
-            clearSelectedTask();
-            taskName.setCellValueFactory(
-                    cell->cell.getValue().getName()
-            );
-            taskAssignee.setCellValueFactory(cell->
-                    new SimpleStringProperty(
-                            allUsers.get(cell.getValue().getAssignee())
-                    )
-            );
-            taskStatus.setCellValueFactory(cell->
-                    new SimpleStringProperty(
-                            cell.getValue().getStatus().name()
-                    )
-            );
-            taskTable.getSelectionModel().selectedItemProperty().addListener((
-                    (observable, oldValue, newValue) -> setSelectedTask(newValue)
-            ));
+        taskName.setCellValueFactory(cell->
+                new SimpleStringProperty(
+                        cell.getValue().getName()
+                )
+        );
+        taskAssignee.setCellValueFactory(cell->
+                new SimpleStringProperty(
+                        allUsers.get(cell.getValue().getAssignee())
+                )
+        );
+        taskStatus.setCellValueFactory(cell->
+                new SimpleStringProperty(
+                        cell.getValue().getStatus().name()
+                )
+        );
+        taskTable.getSelectionModel().selectedItemProperty().addListener((
+                (observable, oldValue, newValue) -> setSelectedTask(newValue)
+        ));
+        clearSelectedTask();
     }
 
     @FXML

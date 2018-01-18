@@ -11,9 +11,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Created by Michał Słowikowski.
- */
 public class ViewSetupManager {
 
     private Stage primaryStage;

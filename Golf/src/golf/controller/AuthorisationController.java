@@ -14,12 +14,6 @@ import javafx.stage.Window;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * TODO
- * handleOk - obsługa przycisku
- * handleExit - obsługa wyjścia
- */
-
 public class AuthorisationController  implements Initializable{
     @FXML
     public TextField login;

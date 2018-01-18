@@ -8,9 +8,6 @@ import javafx.collections.ObservableList;
 
 import java.util.List;
 
-/**
- * Created by Michał Słowikowski.
- */
 public class TaskModelProvider {
     private static TaskModelProvider instance;
     private ObservableList<TaskModel> taskData;

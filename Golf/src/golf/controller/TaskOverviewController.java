@@ -4,7 +4,6 @@ import golf.model.TaskModel;
 import golf.model.TaskModelProvider;
 import golf.model.ViewSetupManager;
 import io2017.pierogimroku.task.api.TaskNotFoundException;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,15 +13,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Map;
 
-
-/**
- * TODO
- *showTaskDetails(Task task) - pokazuje wszystkie informacje danego taska
- * metody FXML-owe mogą być na razie proste outy
- * deleteTask - obsługa przycisku usuwania taska
- * newTask - przycisk dodawanie taksa
- * editTask - wywołanie widoku eycji taska
- */
 public class TaskOverviewController {
 
     @FXML

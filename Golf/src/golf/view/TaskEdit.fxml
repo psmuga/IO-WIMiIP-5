@@ -80,8 +80,8 @@
         </GridPane>
         <ButtonBar layoutX="327.0" layoutY="334.0" prefHeight="55.0" prefWidth="251.0" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="22.0">
             <buttons>
-                <Button mnemonicParsing="false" onAction="#handleOk" text="OK" />
-                <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+                <Button fx:id="ok" mnemonicParsing="false" onAction="#handleOk" text="OK" />
+                <Button fx:id="cancel" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
             </buttons>
         </ButtonBar>
     </children>

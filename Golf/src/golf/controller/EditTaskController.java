@@ -5,21 +5,11 @@ import io2017.pierogimroku.task.api.TaskLook;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.util.Map;
-import java.util.Objects;
 
-/**
- * TODO
- * isTaskValid - sprawdzanie pól, czy dane zostały wprowadz
- * handleOk
- * handleCancel
- */
 public class EditTaskController {
 
     @FXML
@@ -122,11 +112,6 @@ public class EditTaskController {
         return okClicked;
     }
 
-
-    /**
-     * TODO
-     * Zastanowić się czy nie wyrzucić tego do nowej klasy
-     */
     private boolean isInputValid(){
 
         String errorMessage = "";
@@ -143,10 +128,10 @@ public class EditTaskController {
         if(description.getText() == null || description.getText().length() == 0) {
             errorMessage += "Wrong description!\n";
         }
-        if(estimatedTime.getText() == null) {
+        if(estimatedTime.getText() == null || estimatedTime.getText().length() == 0) {
             errorMessage += "Set estimated time!\n";
         }
-        if(priority.getText() == null) {
+        if(priority.getText() == null || priority.getText().length() == 0) {
             errorMessage += "Set priority\n";
         }
         if(owner.getValue() == null) {
@@ -159,6 +144,8 @@ public class EditTaskController {
             alert.setTitle("Invalid Fields");
             alert.setHeaderText("Please correct invalid fields");
             alert.setContentText(errorMessage);
+            Button okButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+            okButton.setId("alertOk");
 
             alert.showAndWait();
 

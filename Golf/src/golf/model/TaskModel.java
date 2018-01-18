@@ -3,9 +3,6 @@ package golf.model;
 import io2017.pierogimroku.task.api.TaskLook;
 import javafx.beans.property.*;
 
-/**
- * Created by Michał Słowikowski.
- */
 public class TaskModel {
 
     private static final int assigneeIdForEmptyTask = 0;
@@ -13,7 +10,6 @@ public class TaskModel {
     private static final int priorityForEmptyTask = 0;
     private static final int ownerIdForEmptyTask = 0;
     private static final int idForEmptyTask = 0;
-
 
     private String name;
     private int assignee;

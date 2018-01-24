@@ -18,7 +18,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="org.mockito:mockito-all:1.10.19" level="project" />
+    <orderEntry type="library" name="org.mockito:mockito-core:2.2.2" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -87,5 +87,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="org.loadui:testFx:3.1.2" level="project" />
+    <orderEntry type="library" name="org.testfx:testfx-junit:4.0.6-alpha" level="project" />
   </component>
 </module>

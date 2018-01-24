@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="golf.controller.AuthorisationController">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleSend" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="golf.controller.AuthorisationController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="400.0" HBox.hgrow="SOMETIMES">
          <children>
@@ -38,7 +38,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button defaultButton="true" mnemonicParsing="false" onKeyPressed="#handleSend" onMouseClicked="#handleSend" text="Login" />
+                  <Button fx:id="ok" defaultButton="true" mnemonicParsing="false" onKeyPressed="#handleSend" onMouseClicked="#handleSend" text="Login" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />

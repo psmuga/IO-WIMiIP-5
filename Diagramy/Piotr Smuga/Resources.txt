@@ -1,0 +1,9 @@
+Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides: "Wzorce Projektowe: Elementy oprogramowania obiektowego wielokrotnego użytku"
+ISBN: 978-83-246-2662-5 Polska edycja, wydawnictwa Helion, 2010 rok str 130-138
+
+Uzair Shamim w ramach blogu medium.com
+https://medium.com/information-and-technology/test-driven-development-in-javafx-with-testfx-66a84cd561e0
+
+Oficjalna dokumentacja TestFx
+https://github.com/TestFX/TestFX/wiki/Assertions
+https://github.com/TestFX/TestFX/wiki/Getting-Started

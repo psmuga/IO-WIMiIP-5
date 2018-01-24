@@ -83,6 +83,6 @@ public class TaskEditTest extends GuiTest {
     @Test
     public void shouldAlertShowIfThereAreEmptyFields(){
         click("#ok");
-        find(hasText("Please correct invalid fields"));
+        find(hasText("Please try again or exit"));
     }
 }

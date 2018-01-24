@@ -19,6 +19,7 @@ public class AuthorisationController  implements Initializable{
     public TextField login;
     @FXML
     public PasswordField password;
+
     private AuthorisationManager authorisationManager;
     private ViewSetupManager viewManager;
 
@@ -31,45 +32,48 @@ public class AuthorisationController  implements Initializable{
     }
 
     public void handleSend(){
-        System.out.println(login.getText() + " " + password.getText());
-        logIn();
+//        System.out.println(login.getText() + " " + password.getText());
+        this.logIn();
         if(authorisationManager.isCanContinue()){
-            closeScene();
-            viewManager.showTaskOverview();
+            changeView();
         }
+    }
+    public void changeView(){
+        closeScene();
+        viewManager.showTaskOverview();
     }
     private void logIn(){
         try {
             String what = authorisationManager.getAuthorization().login(login.getText(),password.getText());
             authorisationManager.setCurrentUser(UserWrapper.Wrapp(what));
             authorisationManager.getCurrentUser().print();
-            //sprawdzenie poprawnosci i wyjscie z tego okna;
             authorisationManager.setCanContinue(true);
         }
         catch (NullPointerException ex){
-            System.out.println("Cannot login");
-            showAlert(Alert.AlertType.ERROR,login.getScene().getWindow(),"Wrong credentials","Please try again or exit");
+            showErrorAlert();
             authorisationManager.setCanContinue(false);
         } catch (NoClassDefFoundError ex){
-            System.out.println("internal error");
-            showAlert(Alert.AlertType.ERROR,login.getScene().getWindow(),"Wrong credentials","Please try again or exit");
+            showErrorAlert();
             authorisationManager.setCanContinue(false);
         }
+    }
+    private void showErrorAlert(){
+        showAlert(Alert.AlertType.ERROR,login.getScene().getWindow(),"Wrong credentials","Please try again or exit");
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
+    public boolean isLogged(){
+        return authorisationManager.isCanContinue();
+    }
     private void closeScene(){
         Stage stage = (Stage) login.getScene().getWindow();
         stage.close();
-//        stage.hide();
     }
 
-
-    public static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+    public  void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);

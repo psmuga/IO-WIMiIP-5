@@ -10,6 +10,195 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="JAVA/golf" pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/golf">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>golf</OriginalElement>
+              <nodes>
+                <node x="168.17640291806964" y="0.0">golf.model.TaskModel</node>
+                <node x="347.3945005611672" y="376.0">golf.model.ViewSetupManager</node>
+                <node x="384.8945005611672" y="455.0">golf.Main</node>
+                <node x="568.8945005611672" y="188.0">golf.model.AuthorisationManager</node>
+                <node x="697.8125701459035" y="267.0">golf.model.UsersProvider</node>
+                <node x="266.8945005611672" y="109.0">golf.controller.EditTaskController</node>
+                <node x="432.8945005611672" y="188.0">golf.model.UserWrapper</node>
+                <node x="157.89590347923678" y="188.0">golf.model.TaskModelProvider</node>
+                <node x="503.81257014590346" y="267.0">golf.controller.AuthorisationController</node>
+                <node x="590.6268518518519" y="109.0">golf.model.User</node>
+                <node x="63.894500561167206" y="109.0">golf.model.TaskModelTransformer</node>
+                <node x="0.0" y="267.0">golf.controller.TaskOverviewController</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="golf.controller.TaskOverviewController" target="golf.model.ViewSetupManager">
+                  <point x="0.0" y="14.5" />
+                  <point x="87.0" y="346.0" />
+                  <point x="367.84904601571264" y="346.0" />
+                  <point x="-54.54545454545456" y="-14.5" />
+                </edge>
+                <edge source="golf.model.TaskModelProvider" target="golf.model.TaskModelTransformer">
+                  <point x="-50.0" y="-14.5" />
+                  <point x="182.89590347923678" y="168.0" />
+                  <point x="149.3945005611672" y="168.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="golf.model.ViewSetupManager" target="golf.model.UsersProvider">
+                  <point x="68.18181818181819" y="-14.5" />
+                  <point x="490.5763187429854" y="356.0" />
+                  <point x="757.8125701459035" y="356.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="golf.model.AuthorisationManager" target="golf.model.User">
+                  <point x="0.0" y="-14.5" />
+                  <point x="652.3945005611672" y="168.0" />
+                  <point x="635.0018518518519" y="168.0" />
+                  <point x="8.875" y="14.5" />
+                </edge>
+                <edge source="golf.controller.AuthorisationController" target="golf.model.AuthorisationManager">
+                  <point x="0.0" y="-14.5" />
+                  <point x="590.3125701459035" y="247.0" />
+                  <point x="596.7278338945006" y="247.0" />
+                  <point x="-55.66666666666666" y="14.5" />
+                </edge>
+                <edge source="golf.model.ViewSetupManager" target="golf.model.TaskModelProvider">
+                  <point x="-27.27272727272731" y="-14.5" />
+                  <point x="395.1217732884399" y="326.0" />
+                  <point x="294.50185185185194" y="326.0" />
+                  <point x="294.50185185185194" y="247.0" />
+                  <point x="282.8959034792368" y="247.0" />
+                  <point x="50.0" y="14.5" />
+                </edge>
+                <edge source="golf.model.ViewSetupManager" target="golf.model.TaskModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="422.3945005611672" y="49.0" />
+                  <point x="268.8764029180696" y="49.0" />
+                  <point x="47.69999999999993" y="14.5" />
+                </edge>
+                <edge source="golf.model.ViewSetupManager" target="golf.model.AuthorisationManager">
+                  <point x="54.54545454545456" y="-14.5" />
+                  <point x="476.93995510662177" y="346.0" />
+                  <point x="687.3125701459035" y="346.0" />
+                  <point x="687.3125701459035" y="247.0" />
+                  <point x="708.0611672278338" y="247.0" />
+                  <point x="55.66666666666663" y="14.5" />
+                </edge>
+                <edge source="golf.model.UserWrapper" target="golf.model.User">
+                  <point x="0.0" y="-14.5" />
+                  <point x="490.8945005611672" y="158.0" />
+                  <point x="599.5018518518519" y="158.0" />
+                  <point x="-26.625" y="14.5" />
+                </edge>
+                <edge source="golf.model.ViewSetupManager" target="golf.controller.TaskOverviewController">
+                  <point x="-68.18181818181819" y="-14.5" />
+                  <point x="354.212682379349" y="356.0" />
+                  <point x="29.0" y="356.0" />
+                  <point x="-58.0" y="14.5" />
+                </edge>
+                <edge source="golf.controller.TaskOverviewController" target="golf.model.TaskModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="87.0" y="237.0" />
+                  <point x="53.394500561167206" y="237.0" />
+                  <point x="53.394500561167206" y="69.0" />
+                  <point x="194.67640291806964" y="69.0" />
+                  <point x="-26.5" y="14.5" />
+                </edge>
+                <edge source="golf.model.ViewSetupManager" target="golf.controller.EditTaskController">
+                  <point x="-13.636363636363626" y="-14.5" />
+                  <point x="408.7581369248036" y="316.0" />
+                  <point x="339.3945005611672" y="316.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="golf.Main" target="golf.model.ViewSetupManager">
+                  <point x="-18.75" y="-14.5" />
+                  <point x="403.6445005611672" y="430.0" />
+                  <point x="384.8945005611672" y="430.0" />
+                  <point x="-37.5" y="14.5" />
+                </edge>
+                <edge source="golf.controller.AuthorisationController" target="golf.model.UserWrapper">
+                  <point x="-57.66666666666666" y="-14.5" />
+                  <point x="532.6459034792368" y="247.0" />
+                  <point x="490.8945005611672" y="247.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="golf.controller.TaskOverviewController" target="golf.model.TaskModelProvider">
+                  <point x="34.80000000000001" y="-14.5" />
+                  <point x="121.80000000000001" y="237.0" />
+                  <point x="182.89590347923678" y="237.0" />
+                  <point x="-50.0" y="14.5" />
+                </edge>
+                <edge source="golf.model.ViewSetupManager" target="golf.controller.AuthorisationController">
+                  <point x="13.636363636363626" y="-14.5" />
+                  <point x="436.03086419753083" y="316.0" />
+                  <point x="532.6459034792368" y="316.0" />
+                  <point x="-57.66666666666666" y="14.5" />
+                </edge>
+                <edge source="golf.model.TaskModelProvider" target="golf.model.TaskModel">
+                  <point x="0.0" y="-14.5" />
+                  <point x="232.89590347923678" y="168.0" />
+                  <point x="245.3945005611672" y="168.0" />
+                  <point x="245.3945005611672" y="89.0" />
+                  <point x="226.4764029180696" y="89.0" />
+                  <point x="5.2999999999999545" y="14.5" />
+                </edge>
+                <edge source="golf.controller.AuthorisationController" target="golf.model.ViewSetupManager">
+                  <point x="0.0" y="14.5" />
+                  <point x="590.3125701459035" y="326.0" />
+                  <point x="449.6672278338945" y="326.0" />
+                  <point x="27.27272727272731" y="-14.5" />
+                </edge>
+                <edge source="golf.controller.EditTaskController" target="golf.model.TaskModel">
+                  <point x="36.25" y="-14.5" />
+                  <point x="375.6445005611672" y="59.0" />
+                  <point x="258.27640291806955" y="59.0" />
+                  <point x="37.09999999999991" y="14.5" />
+                </edge>
+                <edge source="golf.model.TaskModelTransformer" target="golf.model.TaskModel">
+                  <point x="42.75" y="-14.5" />
+                  <point x="192.1445005611672" y="89.0" />
+                  <point x="215.8764029180697" y="89.0" />
+                  <point x="-5.2999999999999545" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.9999999999999996" x="128.0000000000001" y="181.0000000000001" />
+              <SelectedNodes />
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditTaskController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/golf/controller/EditTaskController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <dirStrings>
+      <dir>F:\Repozytorium\IO-WIMiIP-5\Golf\src\test</dir>
+    </dirStrings>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -22,10 +211,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="y" value="-16" />
-    <option name="width" value="1370" />
-    <option name="height" value="744" />
+    <option name="width" value="683" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -42,10 +229,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -84,6 +268,24 @@
               <item name="Golf" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="golf" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Golf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="golf" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Golf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -94,17 +296,29 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/tymczasowe do repo/IO-WIMiIP-5-master/Golf" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -125,6 +339,25 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="golf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="golf.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="golf" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -200,6 +433,11 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -215,40 +453,43 @@
       <option name="presentableId" value="Default" />
       <updated>1516816338633</updated>
       <workItem from="1516816346737" duration="119000" />
+      <workItem from="1516817493664" duration="3409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119000" />
+    <option name="totallyTimeSpent" value="3528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15372425" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2408492" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -261,5 +502,208 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="uml://JAVA/golf">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>golf</OriginalElement>
+          <nodes>
+            <node x="168.17640291806964" y="0.0">golf.model.TaskModel</node>
+            <node x="347.3945005611672" y="376.0">golf.model.ViewSetupManager</node>
+            <node x="384.8945005611672" y="455.0">golf.Main</node>
+            <node x="568.8945005611672" y="188.0">golf.model.AuthorisationManager</node>
+            <node x="697.8125701459035" y="267.0">golf.model.UsersProvider</node>
+            <node x="266.8945005611672" y="109.0">golf.controller.EditTaskController</node>
+            <node x="432.8945005611672" y="188.0">golf.model.UserWrapper</node>
+            <node x="157.89590347923678" y="188.0">golf.model.TaskModelProvider</node>
+            <node x="503.81257014590346" y="267.0">golf.controller.AuthorisationController</node>
+            <node x="590.6268518518519" y="109.0">golf.model.User</node>
+            <node x="63.894500561167206" y="109.0">golf.model.TaskModelTransformer</node>
+            <node x="0.0" y="267.0">golf.controller.TaskOverviewController</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="golf.controller.TaskOverviewController" target="golf.model.ViewSetupManager">
+              <point x="0.0" y="14.5" />
+              <point x="87.0" y="346.0" />
+              <point x="367.84904601571264" y="346.0" />
+              <point x="-54.54545454545456" y="-14.5" />
+            </edge>
+            <edge source="golf.model.TaskModelProvider" target="golf.model.TaskModelTransformer">
+              <point x="-50.0" y="-14.5" />
+              <point x="182.89590347923678" y="168.0" />
+              <point x="149.3945005611672" y="168.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="golf.model.ViewSetupManager" target="golf.model.UsersProvider">
+              <point x="68.18181818181819" y="-14.5" />
+              <point x="490.5763187429854" y="356.0" />
+              <point x="757.8125701459035" y="356.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="golf.model.AuthorisationManager" target="golf.model.User">
+              <point x="0.0" y="-14.5" />
+              <point x="652.3945005611672" y="168.0" />
+              <point x="635.0018518518519" y="168.0" />
+              <point x="8.875" y="14.5" />
+            </edge>
+            <edge source="golf.controller.AuthorisationController" target="golf.model.AuthorisationManager">
+              <point x="0.0" y="-14.5" />
+              <point x="590.3125701459035" y="247.0" />
+              <point x="596.7278338945006" y="247.0" />
+              <point x="-55.66666666666666" y="14.5" />
+            </edge>
+            <edge source="golf.model.ViewSetupManager" target="golf.model.TaskModelProvider">
+              <point x="-27.27272727272731" y="-14.5" />
+              <point x="395.1217732884399" y="326.0" />
+              <point x="294.50185185185194" y="326.0" />
+              <point x="294.50185185185194" y="247.0" />
+              <point x="282.8959034792368" y="247.0" />
+              <point x="50.0" y="14.5" />
+            </edge>
+            <edge source="golf.model.ViewSetupManager" target="golf.model.TaskModel">
+              <point x="0.0" y="-14.5" />
+              <point x="422.3945005611672" y="49.0" />
+              <point x="268.8764029180696" y="49.0" />
+              <point x="47.69999999999993" y="14.5" />
+            </edge>
+            <edge source="golf.model.ViewSetupManager" target="golf.model.AuthorisationManager">
+              <point x="54.54545454545456" y="-14.5" />
+              <point x="476.93995510662177" y="346.0" />
+              <point x="687.3125701459035" y="346.0" />
+              <point x="687.3125701459035" y="247.0" />
+              <point x="708.0611672278338" y="247.0" />
+              <point x="55.66666666666663" y="14.5" />
+            </edge>
+            <edge source="golf.model.UserWrapper" target="golf.model.User">
+              <point x="0.0" y="-14.5" />
+              <point x="490.8945005611672" y="158.0" />
+              <point x="599.5018518518519" y="158.0" />
+              <point x="-26.625" y="14.5" />
+            </edge>
+            <edge source="golf.model.ViewSetupManager" target="golf.controller.TaskOverviewController">
+              <point x="-68.18181818181819" y="-14.5" />
+              <point x="354.212682379349" y="356.0" />
+              <point x="29.0" y="356.0" />
+              <point x="-58.0" y="14.5" />
+            </edge>
+            <edge source="golf.controller.TaskOverviewController" target="golf.model.TaskModel">
+              <point x="0.0" y="-14.5" />
+              <point x="87.0" y="237.0" />
+              <point x="53.394500561167206" y="237.0" />
+              <point x="53.394500561167206" y="69.0" />
+              <point x="194.67640291806964" y="69.0" />
+              <point x="-26.5" y="14.5" />
+            </edge>
+            <edge source="golf.model.ViewSetupManager" target="golf.controller.EditTaskController">
+              <point x="-13.636363636363626" y="-14.5" />
+              <point x="408.7581369248036" y="316.0" />
+              <point x="339.3945005611672" y="316.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="golf.Main" target="golf.model.ViewSetupManager">
+              <point x="-18.75" y="-14.5" />
+              <point x="403.6445005611672" y="430.0" />
+              <point x="384.8945005611672" y="430.0" />
+              <point x="-37.5" y="14.5" />
+            </edge>
+            <edge source="golf.controller.AuthorisationController" target="golf.model.UserWrapper">
+              <point x="-57.66666666666666" y="-14.5" />
+              <point x="532.6459034792368" y="247.0" />
+              <point x="490.8945005611672" y="247.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="golf.controller.TaskOverviewController" target="golf.model.TaskModelProvider">
+              <point x="34.80000000000001" y="-14.5" />
+              <point x="121.80000000000001" y="237.0" />
+              <point x="182.89590347923678" y="237.0" />
+              <point x="-50.0" y="14.5" />
+            </edge>
+            <edge source="golf.model.ViewSetupManager" target="golf.controller.AuthorisationController">
+              <point x="13.636363636363626" y="-14.5" />
+              <point x="436.03086419753083" y="316.0" />
+              <point x="532.6459034792368" y="316.0" />
+              <point x="-57.66666666666666" y="14.5" />
+            </edge>
+            <edge source="golf.model.TaskModelProvider" target="golf.model.TaskModel">
+              <point x="0.0" y="-14.5" />
+              <point x="232.89590347923678" y="168.0" />
+              <point x="245.3945005611672" y="168.0" />
+              <point x="245.3945005611672" y="89.0" />
+              <point x="226.4764029180696" y="89.0" />
+              <point x="5.2999999999999545" y="14.5" />
+            </edge>
+            <edge source="golf.controller.AuthorisationController" target="golf.model.ViewSetupManager">
+              <point x="0.0" y="14.5" />
+              <point x="590.3125701459035" y="326.0" />
+              <point x="449.6672278338945" y="326.0" />
+              <point x="27.27272727272731" y="-14.5" />
+            </edge>
+            <edge source="golf.controller.EditTaskController" target="golf.model.TaskModel">
+              <point x="36.25" y="-14.5" />
+              <point x="375.6445005611672" y="59.0" />
+              <point x="258.27640291806955" y="59.0" />
+              <point x="37.09999999999991" y="14.5" />
+            </edge>
+            <edge source="golf.model.TaskModelTransformer" target="golf.model.TaskModel">
+              <point x="42.75" y="-14.5" />
+              <point x="192.1445005611672" y="89.0" />
+              <point x="215.8764029180697" y="89.0" />
+              <point x="-5.2999999999999545" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9999999999999996" x="128.0000000000001" y="181.0000000000001" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/golf.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/Login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/golf/controller/AuthorisationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/golf/controller/EditTaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

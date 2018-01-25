@@ -46,7 +46,7 @@ public class TaskEditController {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if(!newValue.matches("\\d*")) {
-                    estimatedTime.setText(newValue.replaceAll("[^\\d]", ""));
+                    fieldToSet.setText(newValue.replaceAll("[^\\d]", ""));
                 }
             }
         });

@@ -123,9 +123,9 @@
                         </GridPane>
                         <ButtonBar layoutX="65.0" layoutY="344.0" prefHeight="40.0" prefWidth="338.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                             <buttons>
-                                <Button mnemonicParsing="false" onAction="#handleNewTask" text="New..." />
-                                <Button mnemonicParsing="false" onAction="#handleEditTask" text="Edit..." />
-                                <Button mnemonicParsing="false" onAction="#handleDeleteTask" text="Delete" />
+                                <Button fx:id="newButton" mnemonicParsing="false" onAction="#handleNewTask" text="New..." />
+                                <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEditTask" text="Edit..." />
+                                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteTask" text="Delete" />
                             </buttons>
                         </ButtonBar>
                   <Button layoutX="491.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />

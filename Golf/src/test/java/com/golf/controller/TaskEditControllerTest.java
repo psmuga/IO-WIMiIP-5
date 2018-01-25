@@ -215,7 +215,7 @@ public class TaskEditControllerTest extends ApplicationTest{
     {
         clickOn("#ok");
         TextArea contentArea = find("#alertContent");
-        assertEquals(contentArea.getText(),message);
+        assertEquals(message,contentArea.getText());
         clickOn("#alertOk");
     }
 

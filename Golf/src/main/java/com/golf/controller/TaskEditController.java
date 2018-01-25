@@ -131,19 +131,15 @@ public class TaskEditController {
             errorMessage += "Set ownership\n";
         }
 
-        TextArea content = new TextArea(errorMessage);
-        content.setId("alertContent");
         if(errorMessage.length() != 0){
             Alert alert = new PopUpAlert.AlertBuilder(Alert.AlertType.ERROR,dialogStage)
                     .title("Invalid Fields")
                     .header("Please correct invalid fields")
-                    .content(content)
+                    .content(errorMessage)
+                    .setButtonId("alertOk")
                     .build()
                     .get();
                     new Alert(Alert.AlertType.ERROR);
-
-            Button okButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-            okButton.setId("alertOk");
 
             alert.showAndWait();
 

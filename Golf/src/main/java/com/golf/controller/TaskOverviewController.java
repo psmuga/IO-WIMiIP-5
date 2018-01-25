@@ -1,5 +1,6 @@
 package com.golf.controller;
 
+import com.golf.model.PopUpAlert;
 import com.golf.model.TaskModel;
 import com.golf.model.TaskModelProvider;
 import com.golf.model.ViewSetupManager;
@@ -101,6 +102,15 @@ public class TaskOverviewController {
                 taskProvider.editTask(selectedTask);
                 refreshTableItems();
             }
+        } else {
+            Alert alert = new PopUpAlert.AlertBuilder(Alert.AlertType.WARNING,viewManager.getPrimaryStage())
+                    .title("No Selection")
+                    .header("No Item Selected")
+                    .content("Please select a item in the table before edit.")
+                    .setButtonId("alertOk")
+                    .build()
+                    .get();
+            alert.showAndWait();
         }
     }
 
@@ -113,12 +123,14 @@ public class TaskOverviewController {
                 refreshTableItems();
             } else
             {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.initOwner(viewManager.getPrimaryStage());
-                alert.setTitle("No Selection");
-                alert.setHeaderText("No Item Selected");
-                alert.setContentText("Please select a item in the table.");
 
+                Alert alert = new PopUpAlert.AlertBuilder(Alert.AlertType.WARNING,viewManager.getPrimaryStage())
+                        .title("No Selection")
+                        .header("No Item Selected")
+                        .content("Please select a item in the table before deletion.")
+                        .setButtonId("alertOk")
+                        .build()
+                        .get();
                 alert.showAndWait();
             }
     }
@@ -161,7 +173,8 @@ public class TaskOverviewController {
         taskTable.setItems(taskProvider.getTaskData());
     }
 
-    public void handleLogout(ActionEvent actionEvent) {
+    @FXML
+    private void handleLogout(ActionEvent actionEvent) {
         try {
             Stage stage;
             stage = (Stage) taskTable.getScene().getWindow();

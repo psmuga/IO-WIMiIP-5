@@ -71,23 +71,9 @@ public class TaskEditController {
             task.setDescription(description.getText());
             task.setEstimatedTime(Integer.parseInt(estimatedTime.getText()));
             task.setPriority(Integer.parseInt(priority.getText()));
+            task.setAssignee(getUserIdFromName(assignee.getValue()));
+            task.setOwnerId(getUserIdFromName(owner.getValue()));
 
-            try {
-                task.setAssignee(getUserIdFromName(assignee.getValue()));
-                task.setOwnerId(getUserIdFromName(owner.getValue()));
-            }catch (Exception e)
-            {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.initOwner(dialogStage);
-                alert.setTitle("Error");
-                alert.setContentText(e.getMessage());
-                Button okButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-                okButton.setId("alertOk");
-
-                alert.showAndWait();
-                dialogStage.close();
-                return;
-            }
             okClicked = true;
             dialogStage.close();
         }
@@ -177,6 +163,6 @@ public class TaskEditController {
                 return entry.getKey();
             }
         }
-        throw new NullPointerException("Can't get user id from name. Name doesn't exist");
+        return -1;
     }
 }

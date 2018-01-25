@@ -34,24 +34,6 @@ public class TaskEditController {
     private boolean okClicked = false;
 
 
-    @FXML
-    private void initialize() {
-        status.getItems().addAll(TaskLook.Status.values());
-        setTextFieldAsNumeric(estimatedTime);
-        setTextFieldAsNumeric(priority);
-    }
-
-    private void setTextFieldAsNumeric(TextField fieldToSet){
-        fieldToSet.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if(!newValue.matches("\\d*")) {
-                    fieldToSet.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
-    }
-
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
@@ -61,6 +43,37 @@ public class TaskEditController {
             assignee.getItems().add(allUsers.get(key));
             owner.getItems().add(allUsers.get(key));
         }
+    }
+    public void setTaskToEdit(TaskModel taskToEdit){
+        this.task = taskToEdit;
+
+        String taskToEditName = taskToEdit.getName();
+        TaskLook.Status taskToEditStatus = taskToEdit.getStatus();
+        String taskToEditDescription = taskToEdit.getDescription();
+        int userID = taskToEdit.getAssignee();
+        String taskToEditAssignee = allUsers.get(userID);
+        String taskToEditEstimatedTime = Integer.toString(taskToEdit.getEstimatedTime());
+        String taskToEditPriority = Integer.toString(taskToEdit.getPriority());
+        int ownerId = taskToEdit.getOwnerId();
+        String taskToEditOwner = allUsers.get(ownerId);
+
+        name.setText(taskToEditName);
+        assignee.setValue(taskToEditAssignee);
+        status.setValue(taskToEditStatus);
+        description.setText(taskToEditDescription);
+        estimatedTime.setText(taskToEditEstimatedTime);
+        priority.setText(taskToEditPriority);
+        owner.setValue(taskToEditOwner);
+    }
+    public boolean isOkClicked() {
+        return okClicked;
+    }
+
+    @FXML
+    private void initialize() {
+        status.getItems().addAll(TaskLook.Status.values());
+        setTextFieldAsNumeric(estimatedTime);
+        setTextFieldAsNumeric(priority);
     }
 
     @FXML
@@ -84,30 +97,12 @@ public class TaskEditController {
         dialogStage.close();
     }
 
-    public void setTaskToEdit(TaskModel taskToEdit){
-        this.task = taskToEdit;
-
-        String taskToEditName = taskToEdit.getName();
-        TaskLook.Status taskToEditStatus = taskToEdit.getStatus();
-        String taskToEditDescription = taskToEdit.getDescription();
-        int userID = taskToEdit.getAssignee();
-        String taskToEditAssignee = allUsers.get(userID);
-        String taskToEditEstimatedTime = Integer.toString(taskToEdit.getEstimatedTime());
-        String taskToEditPriority = Integer.toString(taskToEdit.getPriority());
-        int ownerId = taskToEdit.getOwnerId();
-        String taskToEditOwner = allUsers.get(ownerId);
-
-        name.setText(taskToEditName);
-        assignee.setValue(taskToEditAssignee);
-        status.setValue(taskToEditStatus);
-        description.setText(taskToEditDescription);
-        estimatedTime.setText(taskToEditEstimatedTime);
-        priority.setText(taskToEditPriority);
-        owner.setValue(taskToEditOwner);
-    }
-
-    public boolean isOkClicked() {
-        return okClicked;
+    private void setTextFieldAsNumeric(TextField fieldToSet){
+        fieldToSet.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue.matches("\\d*")) {
+                fieldToSet.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
     }
 
     private boolean isInputValid(){
@@ -136,11 +131,13 @@ public class TaskEditController {
             errorMessage += "Set ownership\n";
         }
 
+        TextArea content = new TextArea(errorMessage);
+        content.setId("alertContent");
         if(errorMessage.length() != 0){
             Alert alert = new PopUpAlert.AlertBuilder(Alert.AlertType.ERROR,dialogStage)
                     .title("Invalid Fields")
                     .header("Please correct invalid fields")
-                    .content(errorMessage)
+                    .content(content)
                     .build()
                     .get();
                     new Alert(Alert.AlertType.ERROR);

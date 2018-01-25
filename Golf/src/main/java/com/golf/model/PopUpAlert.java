@@ -1,13 +1,9 @@
 package com.golf.model;
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-/**
- * Created by Michał Słowikowski.
- */
 public class PopUpAlert {
     private Alert alert;
 
@@ -16,7 +12,7 @@ public class PopUpAlert {
         alert.initOwner(builder.stage);
         alert.setTitle(builder.title);
         alert.setHeaderText(builder.header);
-        alert.setContentText(builder.content);
+        alert.getDialogPane().setContent(builder.content);
     }
 
     public Alert get() {
@@ -28,7 +24,7 @@ public class PopUpAlert {
         private final Stage stage;
         private String title;
         private String header;
-        private String content;
+        private TextArea content;
 
         public AlertBuilder(Alert.AlertType type, Stage owner) {
             this.type = type;
@@ -45,7 +41,7 @@ public class PopUpAlert {
             return this;
         }
 
-        public AlertBuilder content(String content) {
+        public AlertBuilder content(TextArea content) {
             this.content = content;
             return this;
         }

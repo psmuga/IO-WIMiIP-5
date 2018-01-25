@@ -1,7 +1,6 @@
 package com.golf.controller;
 
-/**
- * Created by Michał Słowikowski.
- */
-public class TaskOverviewControllerTest {
+public class TaskOverviewControllerTest  {
+
+
 }
